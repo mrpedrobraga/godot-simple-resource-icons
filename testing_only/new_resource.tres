@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Aaa" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bp8opb7vda0ck" path="res://testing_only/icon.svg" id="1_6q3un"]
+[ext_resource type="Script" path="res://testing_only/myres.gd" id="1_qlswj"]
+
+[resource]
+script = ExtResource("1_qlswj")
+i = ExtResource("1_6q3un")
