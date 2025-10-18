@@ -7,7 +7,7 @@ func _handles(type):
 	return type == "Resource"
 
 func _generate(resource, size, _metadata = {}):
-	var img: Image = Image.new()
+	var img: Image
 
 	# The resource script must be a @tool script.
 	if resource.has_method(&"_get_icon"):
@@ -20,6 +20,8 @@ func _generate(resource, size, _metadata = {}):
 	elif &"icon" in resource:
 		if resource.icon:
 			img = resource.icon.get_image()
-	img.resize(size.x, size.y, Image.INTERPOLATE_NEAREST)
 
-	return ImageTexture.create_from_image(img)
+	if img:
+		img.resize(size.x, size.y, Image.INTERPOLATE_NEAREST)
+		return ImageTexture.create_from_image(img)
+	return null
